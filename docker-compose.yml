@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    container_name: backend-ass-api
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      JWT_SECRET: change-me-in-compose
+      JWT_EXPIRES_IN: 1h
+    volumes:
+      - ./data:/app/data
